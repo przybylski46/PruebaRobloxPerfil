@@ -20,18 +20,31 @@ body {
 
 .navbar {
   background: #ffffff;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   border-bottom: 1px solid #ddd;
 }
 
-/* IZQUIERDA */
+.nav-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.nav-bottom {
+  display: flex;
+  gap: 30px;
+  padding: 8px 20px;
+  color: #555;
+  font-weight: 500;
+}
+
+.nav-bottom span:hover {
+  color: black;
+}
+
 .left {
   display: flex;
   align-items: center;
-  gap: 20px;
 }
 
 .logo {
@@ -39,19 +52,6 @@ body {
   height: 28px;
 }
 
-/* LINKS */
-.nav-links {
-  display: flex;
-  gap: 20px;
-  color: #444;
-  font-weight: 500;
-}
-
-.nav-links span {
-  cursor: pointer;
-}
-
-/* CENTRO */
 .center {
   flex: 1;
   display: flex;
@@ -65,19 +65,13 @@ body {
   border: 1px solid #ccc;
 }
 
-/* DERECHA */
 .right {
   display: flex;
   gap: 10px;
 }
 
-/* BOTONES */
-.btn-outline {
-  background: white;
-  color: black;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  padding: 6px 14px;
+.nav-bottom {
+  border-top: 1px solid #eee;
 }
 
 .btn-primary {
@@ -88,46 +82,12 @@ body {
   padding: 6px 14px;
 }
 
-/* LOGO */
-.logo img {
-  width: 28px;
-  height: 28px;
-}
-
-/* BUSCADOR */
-.search {
-  flex: 1;
-  padding: 8px 12px;
-  border-radius: 20px;
-  border: 1px solid #ccc;
-  max-width: 500px;
-}
-
-/* BOTONES */
-.actions {
-  display: flex;
-  gap: 10px;
-}
-
-button {
-  padding: 8px 14px;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-/* Botón blanco con borde negro */
 .btn-outline {
   background: white;
   color: black;
-  border: 1px solid black;
-}
-
-/* Botón azul */
-.btn-primary {
-  background: #3466ff;
-  color: white;
-  border: none;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 6px 14px;
 }
 
 /* HEADER PERFIL */
@@ -230,6 +190,7 @@ button {
 .item img {
   width: 100%;
 }
+
 </style>
 
 </head>
@@ -239,27 +200,28 @@ button {
 <!-- NAV -->
 <div class="navbar">
 
-  <!-- IZQUIERDA -->
-  <div class="left">
-    <img class="logo" src="https://i.imgur.com/tu-logo.png">
+  <!-- FILA 1 -->
+  <div class="nav-top">
+    <div class="left">
+      <img class="logo" src="https://i.imgur.com/tu-logo.png">
+    </div>
 
-    <div class="nav-links">
-      <span>Destacadas</span>
-      <span>Mercado</span>
-      <span>Crear</span>
-      <span>Robux</span> <!-- luego cambias esto -->
+    <div class="center">
+      <input placeholder="Buscar">
+    </div>
+
+    <div class="right">
+      <button class="btn-primary">Registro</button>
+      <button class="btn-outline">Iniciar sesión</button>
     </div>
   </div>
 
-  <!-- CENTRO -->
-  <div class="center">
-    <input placeholder="Buscar">
-  </div>
-
-  <!-- DERECHA -->
-  <div class="right">
-    <button class="btn-primary">Registro</button>
-    <button class="btn-outline">Iniciar sesión</button>
+  <!-- FILA 2 -->
+  <div class="nav-bottom">
+    <span>Destacadas</span>
+    <span>Mercado</span>
+    <span>Crear</span>
+    <span>Placeholder</span>
   </div>
 
 </div>
