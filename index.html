@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 
 <!-- EMBED -->
-<meta property="og:title" content="Pino (@pino)">
-<meta property="og:description" content="🌲 Solo soy un pino tranquilo">
-<meta property="og:image" content="https://i.imgur.com/your-pine.png">
+<meta property="og:title" content="Pino (@PINO_69)">
+<meta property="og:description" content="🌲 1 - 2 🐒">
+<meta property="og:image" content="https://cdn.discordapp.com/attachments/1498040372323024906/1499449430330445944/thumb-spruce3.png?ex=69f4d69a&is=69f3851a&hm=67fc8a0b1e1555269c3540df5e0cbf38f2e81398d8ed87f429b941bf7a0f370a&">
 <meta name="theme-color" content="#00A2FF">
 
 <title>Perfil</title>
@@ -18,11 +18,74 @@ body {
   background: #f2f4f5;
 }
 
-.navbar input {
+.navbar {
+  background: #ffffff;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+}
+
+/* IZQUIERDA */
+.left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  width: 28px;
+  height: 28px;
+}
+
+/* LINKS */
+.nav-links {
+  display: flex;
+  gap: 20px;
+  color: #444;
+  font-weight: 500;
+}
+
+.nav-links span {
+  cursor: pointer;
+}
+
+/* CENTRO */
+.center {
   flex: 1;
-  padding: 8px;
+  display: flex;
+  justify-content: center;
+}
+
+.center input {
+  width: 400px;
+  padding: 8px 15px;
   border-radius: 20px;
   border: 1px solid #ccc;
+}
+
+/* DERECHA */
+.right {
+  display: flex;
+  gap: 10px;
+}
+
+/* BOTONES */
+.btn-outline {
+  background: white;
+  color: black;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 6px 14px;
+}
+
+.btn-primary {
+  background: #3b5eff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 14px;
 }
 
 /* LOGO */
@@ -176,15 +239,27 @@ button {
 <!-- NAV -->
 <div class="navbar">
 
-  <div class="logo">
-    <img src="https://i.imgur.com/tu-logo.png">
+  <!-- IZQUIERDA -->
+  <div class="left">
+    <img class="logo" src="https://i.imgur.com/tu-logo.png">
+
+    <div class="nav-links">
+      <span>Destacadas</span>
+      <span>Mercado</span>
+      <span>Crear</span>
+      <span>Robux</span> <!-- luego cambias esto -->
+    </div>
   </div>
 
-  <input class="search" placeholder="Buscar">
+  <!-- CENTRO -->
+  <div class="center">
+    <input placeholder="Buscar">
+  </div>
 
-  <div class="actions">
-    <button class="btn-outline">Iniciar sesión</button>
+  <!-- DERECHA -->
+  <div class="right">
     <button class="btn-primary">Registro</button>
+    <button class="btn-outline">Iniciar sesión</button>
   </div>
 
 </div>
