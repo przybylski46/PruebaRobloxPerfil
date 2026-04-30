@@ -30,12 +30,28 @@ body {
   padding: 10px 20px;
 }
 
-.nav-bottom {
-  display: flex;
-  gap: 30px;
-  padding: 8px 20px;
-  color: #555;
-  font-weight: 500;
+.nav-bottom span {
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  padding: 8px 0;
+}
+
+.nav-bottom span::after {
+  content: "";
+  position: absolute;
+  left: 25%;
+  bottom: 0;
+  width: 50%;
+  height: 2px;
+  background: black;
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+
+.nav-bottom span:hover::after {
+  transform: scaleX(1);
 }
 
 .nav-bottom span:hover {
@@ -90,7 +106,6 @@ body {
   padding: 6px 14px;
 }
 
-/* HEADER PERFIL */
 .header {
   background: linear-gradient(#e5e5e5, #f2f4f5);
   padding: 40px 20px;
@@ -101,7 +116,6 @@ body {
   width: 180px;
 }
 
-/* INFO */
 .profile-info {
   max-width: 1000px;
   margin: -60px auto 0;
@@ -139,7 +153,6 @@ body {
   border-radius: 8px;
 }
 
-/* STATS */
 .stats {
   display: flex;
   gap: 15px;
@@ -152,7 +165,6 @@ body {
   border-radius: 20px;
 }
 
-/* TABS */
 .tabs {
   display: flex;
   margin-top: 20px;
@@ -197,13 +209,12 @@ body {
 
 <body>
 
-<!-- NAV -->
 <div class="navbar">
 
-  <!-- FILA 1 -->
+ 
   <div class="nav-top">
     <div class="left">
-      <img class="logo" src="https://i.imgur.com/tu-logo.png">
+      <img class="logo" src="https://cdn.discordapp.com/attachments/1498040372323024906/1499485928560001104/0eeeb19633422b1241f4306419a0f15f39d58de9.png?ex=69f4f898&is=69f3a718&hm=b60a2defde81b5002c5fffeca295bcd2f2dd4077ed4f651662ef70038badec08&">
     </div>
 
     <div class="center">
@@ -216,7 +227,7 @@ body {
     </div>
   </div>
 
-  <!-- FILA 2 -->
+ 
   <div class="nav-bottom">
     <span>Destacadas</span>
     <span>Mercado</span>
@@ -226,12 +237,10 @@ body {
 
 </div>
 
-<!-- HEADER -->
 <div class="header">
   <img id="avatar3d" class="avatar-3d">
 </div>
 
-<!-- PERFIL -->
 <div class="profile-info">
 
   <div class="top-row">
@@ -251,18 +260,16 @@ body {
     <div class="stat" id="following"></div>
   </div>
 
-  <!-- TABS -->
+
   <div class="tabs">
     <div class="tab active">Sobre mí</div>
     <div class="tab">Creaciones</div>
   </div>
-
-  <!-- BIO -->
   <div class="section">
     <p id="bio"></p>
   </div>
 
-  <!-- ROPA -->
+
   <div class="section">
     <h3>Ropa actual</h3>
     <div class="items" id="items"></div>
