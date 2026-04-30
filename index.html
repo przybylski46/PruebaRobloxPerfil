@@ -3,110 +3,190 @@
 <head>
 <meta charset="UTF-8">
 
-<!-- EMBED DISCORD -->
+<!-- EMBED -->
 <meta property="og:title" content="Pino (@pino)">
-<meta property="og:description" content="Just a normal Roblox user 🌲">
+<meta property="og:description" content="🌲 Solo soy un pino tranquilo">
 <meta property="og:image" content="https://i.imgur.com/your-pine.png">
 <meta name="theme-color" content="#00A2FF">
 
 <title>Perfil</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
 <style>
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   background: #f2f4f5;
 }
 
+/* NAVBAR */
 .navbar {
-  background: #232527;
-  color: white;
-  padding: 12px 20px;
-  font-weight: 600;
+  background: #ffffff;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid #ddd;
 }
 
-.container {
+.navbar input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+}
+
+/* HEADER PERFIL */
+.header {
+  background: linear-gradient(#e5e5e5, #f2f4f5);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.avatar-3d {
+  width: 180px;
+}
+
+/* INFO */
+.profile-info {
   max-width: 1000px;
-  margin: 30px auto;
-}
-
-.card {
+  margin: -60px auto 0;
   background: white;
   border-radius: 12px;
   padding: 20px;
-  margin-bottom: 20px;
 }
 
-.profile {
+.top-row {
   display: flex;
-  gap: 20px;
   align-items: center;
+  gap: 20px;
 }
 
-.avatar {
-  width: 130px;
-  height: 130px;
+.avatar-small {
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
 }
 
 .name {
-  font-size: 28px;
-  font-weight: 700;
+  font-size: 26px;
+  font-weight: bold;
 }
 
 .username {
   color: gray;
 }
 
+.button {
+  margin-left: auto;
+  background: #3466ff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+/* STATS */
 .stats {
   display: flex;
-  gap: 20px;
-  margin-top: 10px;
-  color: #555;
+  gap: 15px;
+  margin-top: 15px;
 }
 
-.section-title {
-  font-weight: 700;
-  margin-bottom: 10px;
+.stat {
+  background: #eee;
+  padding: 8px 12px;
+  border-radius: 20px;
 }
 
+/* TABS */
+.tabs {
+  display: flex;
+  margin-top: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.tab {
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.tab.active {
+  border-bottom: 2px solid black;
+}
+
+/* ROPA */
+.section {
+  margin-top: 20px;
+}
+
+.items {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+}
+
+.item {
+  background: #eee;
+  width: 120px;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.item img {
+  width: 100%;
+}
 </style>
+
 </head>
 
 <body>
 
-<div class="navbar">Roblox</div>
+<!-- NAV -->
+<div class="navbar">
+  <b>Roblox</b>
+  <input placeholder="Buscar">
+</div>
 
-<div class="container">
+<!-- HEADER -->
+<div class="header">
+  <img id="avatar3d" class="avatar-3d">
+</div>
 
-  <!-- PERFIL -->
-  <div class="card">
-    <div class="profile">
-      <img id="avatar" class="avatar">
-      <div>
-        <div class="name" id="displayName"></div>
-        <div class="username" id="username"></div>
-        <div class="stats">
-          <div id="friends"></div>
-          <div id="followers"></div>
-          <div id="following"></div>
-        </div>
-      </div>
+<!-- PERFIL -->
+<div class="profile-info">
+
+  <div class="top-row">
+    <img id="avatar" class="avatar-small">
+
+    <div>
+      <div id="displayName" class="name"></div>
+      <div id="username" class="username"></div>
     </div>
+
+    <div class="button">Añadir amistad</div>
   </div>
 
-  <!-- ABOUT -->
-  <div class="card">
-    <div class="section-title">About</div>
-    <div id="bio"></div>
+  <div class="stats">
+    <div class="stat" id="friends"></div>
+    <div class="stat" id="followers"></div>
+    <div class="stat" id="following"></div>
   </div>
 
-  <!-- INFO -->
-  <div class="card">
-    <div class="section-title">Info</div>
-    <div id="joinDate"></div>
+  <!-- TABS -->
+  <div class="tabs">
+    <div class="tab active">Sobre mí</div>
+    <div class="tab">Creaciones</div>
+  </div>
+
+  <!-- BIO -->
+  <div class="section">
+    <p id="bio"></p>
+  </div>
+
+  <!-- ROPA -->
+  <div class="section">
+    <h3>Ropa actual</h3>
+    <div class="items" id="items"></div>
   </div>
 
 </div>
@@ -114,16 +194,29 @@ body {
 <script src="data.js"></script>
 <script>
 document.getElementById("avatar").src = data.avatar;
+document.getElementById("avatar3d").src = data.avatar;
+
 document.getElementById("displayName").innerText = data.displayName;
 document.getElementById("username").innerText = "@" + data.username;
 
-document.getElementById("friends").innerText = "Friends: " + data.friends;
-document.getElementById("followers").innerText = "Followers: " + data.followers;
-document.getElementById("following").innerText = "Following: " + data.following;
+document.getElementById("friends").innerText = data.friends + " Amigos";
+document.getElementById("followers").innerText = data.followers + " Seguidores";
+document.getElementById("following").innerText = data.following + " Siguiendo";
 
 document.getElementById("bio").innerText = data.bio;
-document.getElementById("joinDate").innerText = "Join Date: " + data.joinDate;
+
+const itemsDiv = document.getElementById("items");
+
+data.items.forEach(item => {
+  const div = document.createElement("div");
+  div.className = "item";
+  div.innerHTML = `
+    <img src="${item.img}">
+    <div>${item.name}</div>
+  `;
+  itemsDiv.appendChild(div);
+});
 </script>
 
 </body>
-</html>
+  </html>
