@@ -2,12 +2,6 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-
-<meta property="og:title" content="Pino (@PINO_69)">
-<meta property="og:description" content="🌲 1 - 2 🐒">
-<meta property="og:image" content="https://cdn.discordapp.com/attachments/1498040372323024906/1499449430330445944/thumb-spruce3.png?ex=69f4d69a&is=69f3851a&hm=67fc8a0b1e1555269c3540df5e0cbf38f2e81398d8ed87f429b941bf7a0f370a&">
-<meta name="theme-color" content="#00A2FF">
-
 <title>Perfil</title>
 
 <style>
@@ -17,11 +11,13 @@ body {
   background: #f2f4f5;
 }
 
+/* NAVBAR CONTENEDOR */
 .navbar {
   background: #ffffff;
   border-bottom: 1px solid #ddd;
 }
 
+/* PARTE SUPERIOR (Logo, Buscador, Botones) */
 .nav-top {
   display: flex;
   align-items: center;
@@ -29,43 +25,8 @@ body {
   padding: 10px 20px;
 }
 
-.nav-bottom span {
-  flex: 1;
-  text-align: center;
-  cursor: pointer;
-  position: relative;
-  padding: 8px 0;
-}
-
-.nav-bottom span::after {
-  content: "";
-  position: absolute;
-  left: 25%;
-  bottom: 0;
-  width: 50%;
-  height: 2px;
-  background: black;
-  transform: scaleX(0);
-  transition: transform 0.2s ease;
-}
-
-.nav-bottom span:hover::after {
-  transform: scaleX(1);
-}
-
-.nav-bottom span:hover {
-  color: black;
-}
-
-.left {
-  display: flex;
-  align-items: center;
-}
-
-.logo {
-  width: 28px;
-  height: 28px;
-}
+.left { display: flex; align-items: center; }
+.logo { width: 28px; height: 28px; }
 
 .center {
   flex: 1;
@@ -74,27 +35,63 @@ body {
 }
 
 .center input {
-  width: 400px;
+  width: 500px; /* Ancho corregido */
   padding: 8px 15px;
   border-radius: 20px;
   border: 1px solid #ccc;
+  background-color: #f2f4f5; /* Color grisáceo del buscador */
 }
 
-.right {
-  display: flex;
-  gap: 10px;
-}
+.right { display: flex; gap: 10px; }
 
+/* PARTE INFERIOR (Destacadas, Mercado, etc.) */
 .nav-bottom {
+  display: flex;
+  justify-content: center; 
+  gap: 60px; /* Ajustado para que se parezca más a la captura */
+  padding: 12px 0;
   border-top: 1px solid #eee;
 }
 
+.nav-bottom span {
+  font-size: 15px;
+  font-weight: 600;
+  color: #393b3d;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.nav-bottom span:hover {
+  color: #000;
+}
+
+/* Línea de hover corregida */
+.nav-bottom span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -13px; /* Para que la línea quede justo sobre el borde inferior */
+  width: 100%;
+  height: 3px;
+  background: #000;
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+
+.nav-bottom span:hover::after {
+  transform: scaleX(1);
+}
+
+/* BOTONES */
 .btn-primary {
   background: #3b5eff;
   color: white;
   border: none;
   border-radius: 20px;
-  padding: 6px 14px;
+  padding: 6px 16px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .btn-outline {
@@ -102,18 +99,19 @@ body {
   color: black;
   border: 1px solid #ccc;
   border-radius: 20px;
-  padding: 6px 14px;
+  padding: 6px 16px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
+/* RESTO DEL PERFIL */
 .header {
   background: linear-gradient(#e5e5e5, #f2f4f5);
   padding: 40px 20px;
   text-align: center;
 }
 
-.avatar-3d {
-  width: 180px;
-}
+.avatar-3d { width: 180px; }
 
 .profile-info {
   max-width: 1000px;
@@ -121,28 +119,13 @@ body {
   background: white;
   border-radius: 12px;
   padding: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-.top-row {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.avatar-small {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-}
-
-.name {
-  font-size: 26px;
-  font-weight: bold;
-}
-
-.username {
-  color: gray;
-}
+.top-row { display: flex; align-items: center; gap: 20px; }
+.avatar-small { width: 90px; height: 90px; border-radius: 50%; }
+.name { font-size: 26px; font-weight: bold; }
+.username { color: gray; }
 
 .button {
   margin-left: auto;
@@ -150,67 +133,25 @@ body {
   color: white;
   padding: 10px 20px;
   border-radius: 8px;
-}
-
-.stats {
-  display: flex;
-  gap: 15px;
-  margin-top: 15px;
-}
-
-.stat {
-  background: #eee;
-  padding: 8px 12px;
-  border-radius: 20px;
-}
-
-.tabs {
-  display: flex;
-  margin-top: 20px;
-  border-bottom: 1px solid #ddd;
-}
-
-.tab {
-  padding: 10px 15px;
   cursor: pointer;
 }
 
-.tab.active {
-  border-bottom: 2px solid black;
-}
+.stats { display: flex; gap: 15px; margin-top: 15px; }
+.stat { background: #eee; padding: 8px 12px; border-radius: 20px; font-size: 14px; }
 
-/* ROPA */
-.section {
-  margin-top: 20px;
-}
+.tabs { display: flex; margin-top: 20px; border-bottom: 1px solid #ddd; }
+.tab { padding: 10px 15px; cursor: pointer; }
+.tab.active { border-bottom: 2px solid black; font-weight: bold; }
 
-.items {
-  display: flex;
-  gap: 15px;
-  overflow-x: auto;
-}
-
-.item {
-  background: #eee;
-  width: 120px;
-  padding: 10px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.item img {
-  width: 100%;
-}
-
+.section { margin-top: 20px; }
+.items { display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; }
+.item { background: #f2f4f5; width: 120px; padding: 10px; border-radius: 10px; text-align: center; border: 1px solid #eee; }
+.item img { width: 100%; border-radius: 5px; }
 </style>
-
 </head>
-
 <body>
 
 <div class="navbar">
-
- 
   <div class="nav-top">
     <div class="left">
       <img class="logo" src="https://cdn.discordapp.com/attachments/1498040372323024906/1499485928560001104/0eeeb19633422b1241f4306419a0f15f39d58de9.png?ex=69f4f898&is=69f3a718&hm=b60a2defde81b5002c5fffeca295bcd2f2dd4077ed4f651662ef70038badec08&">
@@ -226,82 +167,13 @@ body {
     </div>
   </div>
 
- 
   <div class="nav-bottom">
     <span>Destacadas</span>
     <span>Mercado</span>
     <span>Crear</span>
-    <span>Placeholder</span>
+    <span>Robux</span>
   </div>
-
 </div>
-
-<div class="header">
-  <img id="avatar3d" class="avatar-3d">
-</div>
-
-<div class="profile-info">
-
-  <div class="top-row">
-    <img id="avatar" class="avatar-small">
-
-    <div>
-      <div id="displayName" class="name"></div>
-      <div id="username" class="username"></div>
-    </div>
-
-    <div class="button">Añadir amistad</div>
-  </div>
-
-  <div class="stats">
-    <div class="stat" id="friends"></div>
-    <div class="stat" id="followers"></div>
-    <div class="stat" id="following"></div>
-  </div>
-
-
-  <div class="tabs">
-    <div class="tab active">Sobre mí</div>
-    <div class="tab">Creaciones</div>
-  </div>
-  <div class="section">
-    <p id="bio"></p>
-  </div>
-
-
-  <div class="section">
-    <h3>Ropa actual</h3>
-    <div class="items" id="items"></div>
-  </div>
-
-</div>
-
-<script src="data.js"></script>
-<script>
-document.getElementById("avatar").src = data.avatar;
-document.getElementById("avatar3d").src = data.avatar;
-
-document.getElementById("displayName").innerText = data.displayName;
-document.getElementById("username").innerText = "@" + data.username;
-
-document.getElementById("friends").innerText = data.friends + " Amigos";
-document.getElementById("followers").innerText = data.followers + " Seguidores";
-document.getElementById("following").innerText = data.following + " Siguiendo";
-
-document.getElementById("bio").innerText = data.bio;
-
-const itemsDiv = document.getElementById("items");
-
-data.items.forEach(item => {
-  const div = document.createElement("div");
-  div.className = "item";
-  div.innerHTML = `
-    <img src="${item.img}">
-    <div>${item.name}</div>
-  `;
-  itemsDiv.appendChild(div);
-});
-</script>
 
 </body>
-  </html>
+</html>
